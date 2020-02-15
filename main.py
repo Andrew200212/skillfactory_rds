@@ -1,25 +1,27 @@
 import numpy as np
-count = 1                           
-number = np.random.randint(1,100)   
-print(number)
-mass=[]
-for i in range(1,101):
-    mass+=[i]
-while True:
-    if len(mass)%2==0:
-        predict=mass[int((len(mass)/2))-1]
-    else:
+count = 1 #счетчик количества попыток
+max_number=100 #максимальное число из диапазона натуральных чисел
+max_count=[] #Список количества попыток
+#####Количество игр#####
+for i in range(0,1000):
+    number = np.random.randint(1,max_number)
+    #####Список чисел, входящих в диапазон#####
+    mass=[]
+    for i in range(1,max_number+1):
+        mass+=[i]
+    #####Нахождение числа путем уменьшения диапазона чисел вдвое#####
+    while True:
         predict=mass[len(mass)//2]
-    print(predict) #проверка
-    print(count) #проверка
-    if number==predict:
-        print("Количество попыток -",count)
-        break
-    else:
-        count+=1
-        if number<predict:
-            mass=mass[:int(len(mass)/2)]
-            print(mass) #проверка
-        elif number>predict:
-            mass=mass[-int(len(mass)/2):]
-            print(mass) #проверка
+        if number==predict:
+            max_count+=[count]
+            count=1
+            break
+        else:
+            count+=1 #Увеличение количества попыток
+            if number<predict:
+                mass=mass[:int(len(mass)/2)] #Первая половина диапазона чисел
+            elif number>predict:
+                mass=mass[-int(len(mass)/2):] #Вторая половина диапазона чисел
+print(max_count)
+print(print("Максимальное количество попыток -",max(max_count)))
+print(print("Среднее количество попыток -",int(sum(max_count)/len(max_count))))
