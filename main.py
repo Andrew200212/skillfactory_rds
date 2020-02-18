@@ -7,8 +7,8 @@ for i in range(0,1000):
     number = np.random.randint(1,max_number)
     #####Список чисел, входящих в диапазон#####
     mass=[]
-    for i in range(1,max_number+1):
-        mass+=[i]
+    for j in range(1,max_number+1):
+        mass+=[j]
     #####Нахождение числа путем уменьшения диапазона чисел вдвое#####
     while True:
         predict=mass[len(mass)//2]
@@ -23,5 +23,5 @@ for i in range(0,1000):
             elif number>predict:
                 mass=mass[-int(len(mass)/2):] #Вторая половина диапазона чисел
 print(max_count)
-print(print("Максимальное количество попыток -",max(max_count)))
-print(print("Среднее количество попыток -",int(sum(max_count)/len(max_count))))
+print("Максимальное количество попыток -",max(max_count))
+print("Среднее количество попыток -",int(sum(max_count)/len(max_count)))
