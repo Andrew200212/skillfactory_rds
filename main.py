@@ -7,8 +7,8 @@ for i in range(0,1000):
     number = np.random.randint(1,max_number)
     #####Список чисел, входящих в диапазон#####
     mass=[]
-    for i in range(1,max_number+1):
-        mass+=[i]
+    for j in range(1,max_number+1):
+        mass+=[j]
     #####Нахождение числа путем уменьшения диапазона чисел вдвое#####
     while True:
         predict=mass[len(mass)//2]
