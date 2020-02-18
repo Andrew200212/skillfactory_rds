@@ -23,5 +23,5 @@ for i in range(0,1000):
             elif number>predict:
                 mass=mass[-int(len(mass)/2):] #Вторая половина диапазона чисел
 print(max_count)
-print(print("Максимальное количество попыток -",max(max_count)))
-print(print("Среднее количество попыток -",int(sum(max_count)/len(max_count))))
+print("Максимальное количество попыток -",max(max_count))
+print("Среднее количество попыток -",int(sum(max_count)/len(max_count)))
